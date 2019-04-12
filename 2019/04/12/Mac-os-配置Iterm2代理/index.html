@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="心即理">
+<meta name="description" content="平常使用shadowsocks看看网页是可以的，但是作为一名程序员，使用终端来搭建开发环境是少不了的,同样翻墙也是少不了的，而iterm2这样的终端是不支持socks5的。幸好有google，找到了解决方案，开此博客铭记。">
 <meta name="keywords" content="iterm2,proxy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac os 配置Iterm2代理">
+<meta property="og:title" content="Mac os配置Iterm2代理">
 <meta property="og:url" content="http://www.hzy2m.com/2019/04/12/Mac-os-配置Iterm2代理/index.html">
 <meta property="og:site_name" content="致虚极，守静笃">
-<meta property="og:description" content="心即理">
+<meta property="og:description" content="平常使用shadowsocks看看网页是可以的，但是作为一名程序员，使用终端来搭建开发环境是少不了的,同样翻墙也是少不了的，而iterm2这样的终端是不支持socks5的。幸好有google，找到了解决方案，开此博客铭记。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-12T08:45:08.000Z">
+<meta property="og:updated_time" content="2019-04-12T09:46:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac os 配置Iterm2代理">
-<meta name="twitter:description" content="心即理">
+<meta name="twitter:title" content="Mac os配置Iterm2代理">
+<meta name="twitter:description" content="平常使用shadowsocks看看网页是可以的，但是作为一名程序员，使用终端来搭建开发环境是少不了的,同样翻墙也是少不了的，而iterm2这样的终端是不支持socks5的。幸好有google，找到了解决方案，开此博客铭记。">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>Mac os 配置Iterm2代理 | 致虚极，守静笃</title>
+  <title>Mac os配置Iterm2代理 | 致虚极，守静笃</title>
   
 
 
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mac os 配置Iterm2代理</h1>
+          <h1 class="post-title" itemprop="name headline">Mac os配置Iterm2代理</h1>
         
 
         <div class="post-meta">
@@ -306,6 +306,39 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/proxy/" itemprop="url" rel="index">
+                    <span itemprop="name">proxy</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/proxy/iterm2/" itemprop="url" rel="index">
+                    <span itemprop="name">iterm2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -334,7 +367,15 @@
       
 
       
-        
+        <p>平常使用shadowsocks看看网页是可以的，但是作为一名程序员，使用终端来搭建开发环境是少不了的,同样翻墙也是少不了的，而iterm2这样的终端是不支持socks5的。幸好有google，找到了解决方案，开此博客铭记。<br><a id="more"></a></p>
+<h3 id="安装shdowsocks"><a href="#安装shdowsocks" class="headerlink" title="安装shdowsocks"></a>安装shdowsocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">在iterm2 中执行命令 curl --socks5 127.0.0.1:1086 http://cip.cc</span><br><span class="line">正常的话会有如下输出</span><br><span class="line"> IP	: 118.163.219.43</span><br><span class="line"> 地址	: 中国  台湾  台中市</span><br><span class="line"> 运营商	: cht.com.tw</span><br><span class="line"></span><br><span class="line"> 数据二	: 台湾省 | 中华电信(HiNet)数据中心</span><br><span class="line"></span><br><span class="line"> 数据三	: 中国台湾省台湾 | 中华电信</span><br><span class="line"></span><br><span class="line"> URL	: http://www.cip.cc/118.163.219.43</span><br></pre></td></tr></table></figure>
+<h3 id="安装Privoxy"><a href="#安装Privoxy" class="headerlink" title="安装Privoxy"></a>安装Privoxy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install Privoxy</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">修改/usr/local/etc/privoxy/config文件添加如下2行</span><br><span class="line"></span><br><span class="line">forward-socks5   /            127.0.0.1:1086 .  （注意：1086是shdowsocks默认的端口）</span><br><span class="line"></span><br><span class="line">listen-address  0.0.0.0:8118</span><br></pre></td></tr></table></figure>
+<h3 id="启动privoxy"><a href="#启动privoxy" class="headerlink" title="启动privoxy"></a>启动privoxy</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew services start privoxy</span><br><span class="line"><span class="built_in">export</span> http_proxy=http://127.0.0.1:8118 </span><br><span class="line">curl http://cip.cc</span><br></pre></td></tr></table></figure>
+<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章:"></a>参考文章:</h5><ul>
+<li><a href="&quot;https://blog.csdn.net/mingjia1987/article/details/83184464&quot;">终端中使用SS代理——通过Privoxy实现socks5转http代理</a></li>
+</ul>
+
       
     </div>
     
@@ -460,8 +501,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -489,7 +539,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -533,6 +583,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装shdowsocks"><span class="nav-number">1.</span> <span class="nav-text">安装shdowsocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Privoxy"><span class="nav-number">2.</span> <span class="nav-text">安装Privoxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动privoxy"><span class="nav-number">3.</span> <span class="nav-text">启动privoxy</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文章"><span class="nav-number">3.0.1.</span> <span class="nav-text">参考文章:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
