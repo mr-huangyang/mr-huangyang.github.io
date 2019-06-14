@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="致虚极，守静笃">
 <meta property="og:description" content="平常使用shadowsocks看看网页是可以的，但是作为一名程序员，使用终端来搭建开发环境是少不了的,同样翻墙也是少不了的，而iterm2这样的终端是不支持socks5的。幸好有google，找到了解决方案，开此博客铭记。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-14T10:01:52.000Z">
+<meta property="og:updated_time" content="2019-06-14T10:08:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac os配置Iterm2代理">
 <meta name="twitter:description" content="平常使用shadowsocks看看网页是可以的，但是作为一名程序员，使用终端来搭建开发环境是少不了的,同样翻墙也是少不了的，而iterm2这样的终端是不支持socks5的。幸好有google，找到了解决方案，开此博客铭记。">
@@ -383,7 +383,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">修改/usr/local/etc/privoxy/config文件添加如下2行</span><br><span class="line"></span><br><span class="line">forward-socks5   /            127.0.0.1:1086 .  （注意：1086是shdowsocks默认的端口）</span><br><span class="line"></span><br><span class="line">listen-address  0.0.0.0:8118</span><br></pre></td></tr></table></figure>
 <h3 id="启动privoxy"><a href="#启动privoxy" class="headerlink" title="启动privoxy"></a>启动privoxy</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew services start privoxy</span><br><span class="line"><span class="built_in">export</span> http_proxy=http://127.0.0.1:8118 </span><br><span class="line">curl http://cip.cc</span><br></pre></td></tr></table></figure>
 <h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章:"></a>参考文章:</h5><ul>
-<li><a href="&quot;https://blog.csdn.net/mingjia1987/article/details/83184464&quot;">终端中使用SS代理——通过Privoxy实现socks5转http代理</a></li>
+<li><a href="https://blog.csdn.net/mingjia1987/article/details/83184464" target="_blank" rel="noopener">终端中使用SS代理——通过Privoxy实现socks5转http代理</a></li>
 </ul>
 
       
