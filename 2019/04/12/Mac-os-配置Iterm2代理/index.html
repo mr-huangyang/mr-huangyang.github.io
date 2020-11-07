@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="致虚极，守静笃">
 <meta property="og:description" content="平常使用shadowsocks看看网页是可以的，但是作为一名程序员，使用终端来搭建开发环境是少不了的,同样翻墙也是少不了的，而iterm2这样的终端是不支持socks5的。幸好有google，找到了解决方案，开此博客铭记。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-14T10:08:55.000Z">
+<meta property="og:updated_time" content="2020-11-07T08:09:59.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac os配置Iterm2代理">
 <meta name="twitter:description" content="平常使用shadowsocks看看网页是可以的，但是作为一名程序员，使用终端来搭建开发环境是少不了的,同样翻墙也是少不了的，而iterm2这样的终端是不支持socks5的。幸好有google，找到了解决方案，开此博客铭记。">
@@ -381,7 +381,7 @@
 <h3 id="安装shdowsocks"><a href="#安装shdowsocks" class="headerlink" title="安装shdowsocks"></a>安装shdowsocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">在iterm2 中执行命令 curl --socks5 127.0.0.1:1086 http://cip.cc</span><br><span class="line">正常的话会有如下输出</span><br><span class="line"> IP	: 118.163.219.43</span><br><span class="line"> 地址	: 中国  台湾  台中市</span><br><span class="line"> 运营商	: cht.com.tw</span><br><span class="line"></span><br><span class="line"> 数据二	: 台湾省 | 中华电信(HiNet)数据中心</span><br><span class="line"></span><br><span class="line"> 数据三	: 中国台湾省台湾 | 中华电信</span><br><span class="line"></span><br><span class="line"> URL	: http://www.cip.cc/118.163.219.43</span><br></pre></td></tr></table></figure>
 <h3 id="安装Privoxy"><a href="#安装Privoxy" class="headerlink" title="安装Privoxy"></a>安装Privoxy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install Privoxy</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">修改/usr/local/etc/privoxy/config文件添加如下2行</span><br><span class="line"></span><br><span class="line">forward-socks5   /            127.0.0.1:1086 .  （注意：1086是shdowsocks默认的端口）</span><br><span class="line"></span><br><span class="line">listen-address  0.0.0.0:8118</span><br></pre></td></tr></table></figure>
-<h3 id="启动privoxy"><a href="#启动privoxy" class="headerlink" title="启动privoxy"></a>启动privoxy</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew services start privoxy</span><br><span class="line"><span class="built_in">export</span> http_proxy=http://127.0.0.1:8118 </span><br><span class="line">curl http://cip.cc</span><br></pre></td></tr></table></figure>
+<h3 id="启动privoxy"><a href="#启动privoxy" class="headerlink" title="启动privoxy"></a>启动privoxy</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew services start privoxy</span><br><span class="line"><span class="built_in">export</span> http_proxy=http://127.0.0.1:1086 </span><br><span class="line">curl http://cip.cc</span><br></pre></td></tr></table></figure>
 <h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章:"></a>参考文章:</h5><ul>
 <li><a href="https://blog.csdn.net/mingjia1987/article/details/83184464" target="_blank" rel="noopener">终端中使用SS代理——通过Privoxy实现socks5转http代理</a></li>
 </ul>
@@ -630,7 +630,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
